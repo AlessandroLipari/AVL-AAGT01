@@ -59,12 +59,12 @@
 // Include the GSM library
 //#include <GSM.h>
 
-#define PINNUMBER ""PIN
+#define PINNUMBER ""/*PIN*/
 const int sensorMov = A0;
 const int sensorGas = A1;
 const int pin_start = 4;
 const int pin_led_gsm = 5;
-int sensrValue; /* Valore letto dall'ADC */
+int sensrValue; /* value reading of'ADC */
 int start = false;
 int button_read;
 float Gas_value;
@@ -87,9 +87,6 @@ void setup()
   // critical, time-sensitive code here
   // initialize serial communications and wait for port to open:
   Serial.begin(9600);
-//  while (!Serial) {
-//    ; // wait for serial port to connect. Needed for Leonardo only
-//}
   
   Serial.println("SMS Messages Sender");
 
@@ -112,7 +109,6 @@ void setup()
   Serial.println("GSM initialized");
   digitalWrite (pin_led_gsm, LOW);
   
-//  attachInterrupt(0,StartSensor, RISING  );
 }
 
 void loop()
